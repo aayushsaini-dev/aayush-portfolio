@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventSphere</title>
+    <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="bg-gray-950 min-h-screen flex items-center justify-center">
+  
+
+    <main
+        class="bg-gray-700 w-[90vw] max-w-5xl min-h-[90vh] rounded-2xl shadow-2xl border border-indigo-500 overflow-hidden p-4">
+        <!-- Fixed: Used 'w-[90vw]' + 'max-w-5xl' instead of 'min-w', and added padding for internal breathing -->
+
+        <!-- ✅ Navbar -->
+        <nav>
+            <div class="bg-gray-900 text-white grid grid-cols-2 sm:grid-cols-12 gap-4 px-3 py-2 items-center">
+                <div class="col-span-1 sm:col-span-6 pl-2">
+                    <h3 class="text-purple-700 text-2xl font-bold">EventSphere</h3>
+                </div>
+                <div class="hidden sm:block sm:col-span-2 text-center">
+                    <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                </div>
+                <div class="hidden sm:block sm:col-span-2 text-center">
+                    <a href="#speakers" class="hover:text-indigo-400 transition">Speakers</a>
+                </div>
+                <div class="col-span-1 sm:col-span-2 text-right">
+                    <a href="#register" class="hover:text-indigo-400 transition">Register</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ✅ Hero Section -->
+        <section id="hero" class="bg-pink-700 h-24 mt-4 rounded-lg"></section>
+
+        <!-- ✅ About Section -->
+        <section id="about" class="bg-green-700 h-24 mt-4 rounded-lg"></section>
+    </main>
+</body>
+
+</html>
