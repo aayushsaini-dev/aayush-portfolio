@@ -1,0 +1,191 @@
+/*
+ * =============================================
+ * Main Stylesheet (src/index.css)
+ *
+ * Final Desktop Version
+ *
+ * Structure:
+ * 1. Imports
+ * 2. Base & Global Styles
+ * 3. Animations & Keyframes
+ * 4. Custom Component Styles
+ * =============================================
+ */
+
+/* 1. Imports */
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/* 2. Base & Global Styles */
+html,
+body {
+  height: 100%;
+  scroll-behavior: auto; /* Let Lenis handle smoothness */
+  background-color: #0a0f0f; /* brand-dark */
+  color: #f5f5f5; /* brand-light */
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a; /* zinc-800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14b8a6; /* brand-teal */
+}
+
+/* 3. Animations & Keyframes */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+/* 4. Custom Component Styles */
+
+/* --- Global Chamfered Button System (Final Minimalist Hover) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  /* Add transition for the new hover effect */
+  transition: color 0.3s ease-out, border-color 0.3s ease-out;
+  /* The chamfered corner shape */
+  clip-path: polygon(
+    10px 0%,
+    100% 0%,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0% 100%,
+    0% 10px
+  );
+}
+
+/* Primary Button (for dark backgrounds like Hero) */
+.btn-primary {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Secondary Button (for light backgrounds like Contact) */
+.btn-secondary {
+  color: #0a0f0f;
+  border-color: #0a0f0f;
+}
+
+/* Universal hover state for all buttons */
+.btn-primary:hover,
+.btn-secondary:hover {
+  color: #889586; /* Gold text on hover */
+  border-color: #d5a406; /* Gold border on hover */
+}
+
+/* --- Navbar Link Gold Underline on Hover --- */
+.nav-link-underline {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d5a406;
+  transition: width 0.3s ease-out;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* --- Footer Link Subtle Underline on Hover --- */
+.footer-link-underline {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.footer-link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0a0f0f; /* Subtle dark underline */
+  transition: width 0.3s ease-out;
+}
+
+.footer-link-underline:hover::after {
+  width: 100%;
+}
+
+/* --- Custom Section Divider (Dark Theme) --- */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(213, 164, 6, 0.5),
+    transparent
+  );
+}
+
+/* --- Custom Contact Form Input (Dark Theme) --- */
+.contact-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  width: 100%;
+  padding: 0.75rem 0.25rem;
+  color: #f5f5f5; /* Light text for input */
+  transition: border-color 0.3s ease-out;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-input:focus {
+  border-bottom-color: #d5a406;
+}
+
+/* --- Reusable Global & Component Styles --- */
+.section-dark-textured {
+  background-color: #0a0f0f;
+  background-image: url(/images/backgrounds/carbon-texture.svg);
+}
+
+.border-dark-subtle {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-gold {
+  background-color: #d5a406;
+  color: #0a0f0f;
+}
